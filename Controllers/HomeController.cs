@@ -15,6 +15,26 @@ namespace Authentification.Controllers
             return View();
         }
 
+     
+
+         public IActionResult Login()
+        {
+            return View();
+        }
+
+        // HTTP POST
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public IActionResult Login(User user)
+        {
+            Console.WriteLine("\n"+"\n"+"************  DEBUG ****************"+"\n"+"\n");
+
+            Console.WriteLine("\n"+"\n"+"************************************"+"\n"+"\n");
+
+
+            return View(user);
+        }
+
         public IActionResult Privacy()
         {
             return View();

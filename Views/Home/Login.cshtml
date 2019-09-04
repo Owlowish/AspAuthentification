@@ -1,0 +1,26 @@
+@model Authentification.Models.User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div id="contact-form row">
+    <form  asp-controller="Home" asp-action="Login" asp-anti-forgery="true" method="post">
+        <div class="form-group">
+            <div class="col-md-12 form-group">
+                <input asp-for="UserNumber" class="form-control" placeholder="UserNumber" />
+                <span asp-validation-for="UserNumber" style="color: red"></span>
+            </div>
+            <div class="col-md-12 form-group">
+                <input asp-for="Password" class="form-control" placeholder="Password" />
+                <span asp-validation-for="Password" style="color: red"></span>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" type="submit" id="submit">Envoyer</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @Html.Partial("_ValidationScriptsPartial")
+}

@@ -29,10 +29,7 @@ namespace Authentification.Models
                         Password = "1111",
                         FirstName = "Yuhan",
                         FamilyName = "Chen",
-
                     }
-
-
                 );
                 context.SaveChanges();
             }    
