@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Authentification.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Authentification
 {
@@ -31,6 +33,9 @@ namespace Authentification
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // ##########  DATABASE INITIALISATION #########    
+            services.AddDbContext<UserContext>(options =>
+            options.UseSqlite(Configuration.GetConnectionString("UserContext")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
