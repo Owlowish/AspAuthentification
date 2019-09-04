@@ -5,6 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Authentification.Models;
+using Microsoft.AspNetCore.Authorization;
+
+
+
 
 namespace Authentification.Controllers
 {
@@ -19,10 +23,12 @@ namespace Authentification.Controllers
             _context = context;
         }
        
+      
         public IActionResult Index()
         {
             return View();
         }
+
          public IActionResult Login()
         {
             return View();
@@ -36,17 +42,34 @@ namespace Authentification.Controllers
             
             // ##############  TEST ###################################
 
+           
+           
+           
            // recherche dans la base de donnée l'élément correspondant aux critères
-            var userdb = (from m in _context.User
-                            where (m.FirstName == "Yuhan")
+            try
+            {
+                var userdb = (from m in _context.User
+                            where (m.UserNumber == user.UserNumber )
                             select m).Single();
-            //OUTPUT
+                            
+             //OUTPUT
             Console.WriteLine("\n"+"\n"+"************  DEBUG ****************"+"\n"+"\n");
             
             Console.WriteLine ("Username INPUT : " + user.UserNumber);
             Console.WriteLine ("Password INPUT : " + user.Password);
             Console.WriteLine ("DataBase -- UserID : " + userdb.UserNumber + "  Password : " +  userdb.Password + "  Name : " + userdb.FirstName );
             Console.WriteLine("\n"+"\n"+"************************************"+"\n"+"\n");
+
+            if (userdb.Password == user.Password)
+            return RedirectToAction("Index","User");
+                
+            }
+            catch (System.Exception)
+            {      
+                 return View(user);
+            }
+            
+           
 
               // ##############  TEST ###################################
 
@@ -66,5 +89,8 @@ namespace Authentification.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+       
+
     }
 }

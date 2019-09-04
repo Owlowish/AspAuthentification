@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Authentification.Models;
+using System.ComponentModel;
+using System.Data;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Authentification.Controllers
 {
@@ -13,14 +17,16 @@ namespace Authentification.Controllers
     {
         private readonly UserContext _context;
 
+
         public UserController(UserContext context)
         {
             _context = context;
         }
 
         // GET: User
+        [Authorize]
         public async Task<IActionResult> Index()
-        {
+        {     
             return View(await _context.User.ToListAsync());
         }
 
@@ -148,5 +154,6 @@ namespace Authentification.Controllers
         {
             return _context.User.Any(e => e.Id == id);
         }
+        
     }
 }

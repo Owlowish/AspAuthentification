@@ -29,7 +29,25 @@ namespace Authentification.Models
                         Password = "1111",
                         FirstName = "Yuhan",
                         FamilyName = "Chen",
+                    },
+
+                      new User{
+                        
+                        UserNumber = "2222",
+                        Password = "2222",
+                        FirstName = "Hugo",
+                        FamilyName = "Ruellet",
+                    },
+
+                        new User{
+                        
+                        UserNumber = "3333",
+                        Password = "3333",
+                        FirstName = "Winnie",
+                        FamilyName = "L'ourson",
                     }
+
+
                 );
                 context.SaveChanges();
             }    
