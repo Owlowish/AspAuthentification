@@ -24,7 +24,7 @@ namespace Authentification.Controllers
         }
 
         // GET: User
-        [Authorize]
+    
         public async Task<IActionResult> Index()
         {     
             return View(await _context.User.ToListAsync());
