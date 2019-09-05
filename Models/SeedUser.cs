@@ -29,6 +29,7 @@ namespace Authentification.Models
                         Password = "1111",
                         FirstName = "Yuhan",
                         FamilyName = "Chen",
+                        Status =0,
                     },
 
                       new User{
@@ -37,14 +38,16 @@ namespace Authentification.Models
                         Password = "2222",
                         FirstName = "Hugo",
                         FamilyName = "Ruellet",
+                        Status = 0,
                     },
 
                         new User{
                         
-                        UserNumber = "3333",
-                        Password = "3333",
-                        FirstName = "Winnie",
-                        FamilyName = "L'ourson",
+                        UserNumber = "9999",
+                        Password = "9999",
+                        FirstName = "Admin",
+                        FamilyName = "Admin",
+                        Status = 0,
                     }
 
 

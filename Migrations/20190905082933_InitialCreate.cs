@@ -12,10 +12,11 @@ namespace Authentification.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserNumber = table.Column<int>(nullable: false),
-                    Password = table.Column<int>(nullable: false),
+                    UserNumber = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
-                    FamilyName = table.Column<string>(nullable: true)
+                    FamilyName = table.Column<string>(nullable: true),
+                    Status = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

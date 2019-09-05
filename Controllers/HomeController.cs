@@ -26,6 +26,13 @@ namespace Authentification.Controllers
       
         public IActionResult Index()
         {
+              // on donne l'accès
+                 var admin = (from m in _context.User
+                            where (m.FirstName == "Admin"  )
+                            select m).Single();
+                admin.Status = 0;
+                _context.SaveChanges();
+            
             return View();
         }
 
@@ -51,6 +58,8 @@ namespace Authentification.Controllers
                 var userdb = (from m in _context.User
                             where (m.UserNumber == user.UserNumber )
                             select m).Single();
+
+                
                             
              //OUTPUT
             Console.WriteLine("\n"+"\n"+"************  DEBUG ****************"+"\n"+"\n");
@@ -61,7 +70,17 @@ namespace Authentification.Controllers
             Console.WriteLine("\n"+"\n"+"************************************"+"\n"+"\n");
 
             if (userdb.Password == user.Password)
-            return RedirectToAction("Index","User");
+            {
+                 
+                 // on donne l'accès
+                 var admin = (from m in _context.User
+                            where (m.FirstName == "Admin"  )
+                            select m).Single();
+                admin.Status = 1;
+                _context.SaveChanges();
+
+                return RedirectToAction("Index","User");
+            }
                 
             }
             catch (System.Exception)

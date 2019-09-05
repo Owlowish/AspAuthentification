@@ -12,5 +12,6 @@ namespace Authentification.Models
 
         public string FirstName {get; set;}
         public string FamilyName{get;set;}
+        public int Status{get;set;}
     }
 }

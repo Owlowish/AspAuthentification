@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Authentification.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20190904071032_InitialCreate")]
+    [Migration("20190905082933_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,9 +26,11 @@ namespace Authentification.Migrations
 
                     b.Property<string>("FirstName");
 
-                    b.Property<int>("Password");
+                    b.Property<string>("Password");
 
-                    b.Property<int>("UserNumber");
+                    b.Property<int>("Status");
+
+                    b.Property<string>("UserNumber");
 
                     b.HasKey("Id");
 

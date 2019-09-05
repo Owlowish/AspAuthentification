@@ -24,9 +24,11 @@ namespace Authentification.Migrations
 
                     b.Property<string>("FirstName");
 
-                    b.Property<int>("Password");
+                    b.Property<string>("Password");
 
-                    b.Property<int>("UserNumber");
+                    b.Property<int>("Status");
+
+                    b.Property<string>("UserNumber");
 
                     b.HasKey("Id");
 

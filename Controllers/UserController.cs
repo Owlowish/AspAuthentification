@@ -27,6 +27,18 @@ namespace Authentification.Controllers
     
         public async Task<IActionResult> Index()
         {     
+            //test filtre
+            
+            var userdb = (from m in _context.User
+                            where (m.FirstName == "Admin"  )
+                            select m).Single();
+
+            if (userdb.Status != 1)
+            {
+                return RedirectToAction("Login","Home");
+            }
+
+
             return View(await _context.User.ToListAsync());
         }
 
