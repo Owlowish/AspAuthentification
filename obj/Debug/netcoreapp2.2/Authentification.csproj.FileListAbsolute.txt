@@ -34,3 +34,4 @@ C:\Users\cheyuh\Desktop\temp\ASP MVC\Tutorial\Authentification\obj\Debug\netcore
 C:\Users\cheyuh\Desktop\temp\ASP MVC\Tutorial\Authentification\obj\Debug\netcoreapp2.2\Razor\Views\User\Edit.g.cshtml.cs
 C:\Users\cheyuh\Desktop\temp\ASP MVC\Tutorial\Authentification\obj\Debug\netcoreapp2.2\Razor\Views\User\Index.g.cshtml.cs
 C:\Users\cheyuh\Desktop\temp\ASP MVC\Tutorial\Authentification\obj\Debug\netcoreapp2.2\Razor\Views\Home\Login.g.cshtml.cs
+C:\Users\cheyuh\Desktop\temp\ASP MVC\Tutorial\Authentification\obj\Debug\netcoreapp2.2\Razor\Views\Home\Erreur.g.cshtml.cs

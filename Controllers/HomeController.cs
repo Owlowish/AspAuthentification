@@ -41,6 +41,12 @@ namespace Authentification.Controllers
             return View();
         }
 
+
+           public IActionResult Erreur()
+        {
+            return View();
+        }
+
         // HTTP POST
         [ValidateAntiForgeryToken]
         [HttpPost]
@@ -85,7 +91,7 @@ namespace Authentification.Controllers
             }
             catch (System.Exception)
             {      
-                 return View(user);
+                 return RedirectToAction("Erreur","Home");
             }
             
            
